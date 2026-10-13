@@ -9,16 +9,20 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SkillsComponent } from './skills/skills.component';
 import { StatisticsComponent } from './statistics/statistics.component'
 
+// ! for using interceptor + toast
+import { ToastComponent } from './toast/toast.component'
+import { responseInterceptor } from './interceptors/response.interceptor';
+
 // ! for using currency pipe
 import { registerLocaleData } from "@angular/common"
-import localeHu from "@angular/common/locales/hu"
+import localeHu from "@angular/common/locales/hu";
 registerLocaleData(localeHu)
 
 @NgModule({
@@ -33,7 +37,8 @@ registerLocaleData(localeHu)
     HomepageComponent,
     NotfoundComponent,
     SkillsComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ registerLocaleData(localeHu)
 		FormsModule /* !!! */
   ],
   providers: [
-		provideHttpClient() /* !!! */
+		provideHttpClient(withInterceptors([responseInterceptor])) /* !!! */
 	],
   bootstrap: [AppComponent]
 })
