@@ -28,9 +28,11 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - routing
 
 #### 3. alkalom - Angular szolgáltatások, API hívások
-- szolgáltatások
 - direktívák
+- szolgáltatások
 - depdendency injection
+- SOLID
+- singleton
 
 #### 4. alkalom - Angular további haladó eszközök
 - env variables
@@ -39,6 +41,7 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - stateful vs stateless
 - rxjs
 - observables
+- behaviour subject
 - tesztelés
 - viewchild
 - content projection
