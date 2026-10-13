@@ -1,3 +1,5 @@
+![banner](assets/banner.png)
+
 # Backend és Frontend fejlesztés
 ## Mérnökinformatikus - Szoftver specializáció
 
@@ -45,6 +47,14 @@ https://nik.uni-obuda.hu/targyleirasok/wp-content/uploads/2026/06/BackendEsFront
 - tesztelés
 - viewchild
 - content projection
+
+#### 5. alkalom - Angular további haladó eszközök
+- component I/O
+- interceptor
+- toast
+- dark mode
+- signalR
+- lifecycles
 
 ### Heti bontás
 
