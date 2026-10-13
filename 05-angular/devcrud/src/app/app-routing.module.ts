@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SkillsComponent } from './skills/skills.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 /* !!! */
 const routes: Routes = [
