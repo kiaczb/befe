@@ -1,0 +1,23 @@
+import { NgModule, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing-module';
+import { App } from './app';
+import { FormsModule } from '@angular/forms';
+import { Nav } from './nav/nav';
+import { Home } from './home/home';
+import { ErrorPage } from './error/error';
+import { Contact } from './contact/contact';
+import { Team } from './team/team';
+import { Animals } from './animals/animals';
+
+@NgModule({
+  declarations: [App, Nav, Home, ErrorPage, Contact, Team, Animals],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }), // zone.js: setTimeout / HTTP után is frissüljön a képernyő
+  ],
+  bootstrap: [App],
+})
+export class AppModule {}

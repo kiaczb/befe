@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="alert alert-info mt-3">
+    <h5>Kapcsolat</h5>
+
+    <div class="mb-3">
+      <label class="form-label">Név</label>
+      <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <!--
+        (change):        csak akkor fut le, amikor a mező elveszti a fókuszt vagy Entert nyomunk
+        (input):         minden billentyűleütésnél lefut
+        (ngModelChange): minden leütésnél lefut, de ha a [(ngModel)] ELÉ írjuk, egy karakterrel lemarad,
+                         mert a checkEmail() még az email mező frissítése előtt fut le
+      -->
+      <input type="text" class="form-control" [(ngModel)]="email" (input)="checkEmail()">
+      <div class="alert alert-danger mt-2" *ngIf="!isValidEmail">
+        Érvénytelen email cím!
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label d-block">Adományozó?</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="donor" id="donorYes" [value]="true" [(ngModel)]="isDonor">
+        <label class="form-check-label" for="donorYes">Igen</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="donor" id="donorNo" [value]="false" [(ngModel)]="isDonor">
+        <label class="form-check-label" for="donorNo">Nem</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Üzenet</label>
+      <textarea class="form-control" [(ngModel)]="message"></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="submitForm()">Küldés</button>
+  </div>
+</div>
