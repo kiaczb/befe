@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="alert alert-info mt-3">
+    <h5>Örökbefogadás</h5>
+
+    <div class="mb-3">
+      <label class="form-label">Név</label>
+      <input type="text" class="form-control" [(ngModel)]="credentials.name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Telefonszám</label>
+      <input type="tel" class="form-control" [(ngModel)]="credentials.phone">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Állat neve</label>
+      <input type="text" class="form-control" disabled [ngModel]="selectedAnimal?.name">
+    </div>
+
+    <button class="btn btn-success" (click)="startAdoption()">Örökbefogadás indítása</button>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let animal of animals">
+            <div class="card">
+                <img src="{{ animal.imageUrl }}" class="card-img-top" alt="{{ animal.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal.name }}</h5>
+                    <p class="card-text">{{ animal.species }}</p>
+                    <p class="card-text">Nem: {{ animal.gender }}</p>
+                    <p class="card-text">Kor: {{ animal.age }} év</p>
+
+                    <button class="btn btn-primary" (click)="adopt(animal)">Örökbe fogadom</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

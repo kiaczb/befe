@@ -1,0 +1,71 @@
+<div class="container mt-3">
+
+  <!-- Carousel -->
+  <div id="homeCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1. kép"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="2. kép"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="3. kép"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.dog.ceo/breeds/retriever-golden/20200814_163629_200814.jpg" class="d-block w-100" alt="Golden retriever">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cataas.com/cat/05Xd4JtN14983pns" class="d-block w-100" alt="Macska">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.dog.ceo/breeds/mountain-bernese/n02107683_1468.jpg" class="d-block w-100" alt="Berni pásztorkutya">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Előző</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Következő</span>
+    </button>
+  </div>
+
+  <!-- Leírás -->
+  <div class="mb-4">
+    <h2>Rólunk</h2>
+    <p>
+      Menhelyünk 2010 óta fogad be gazdátlan, elhagyott és bántalmazott kutyákat és macskákat.
+      Állatorvosi ellátást, gondoskodást és szeretetet biztosítunk nekik, amíg meg nem találják
+      új, végleges otthonukat.
+    </p>
+    <p>
+      Önkénteseink segítenek a sétáltatásban, az etetésben és a szocializálásban.
+      Ha szeretnél örökbe fogadni, adományozni vagy önkénteskedni, keress minket bizalommal!
+    </p>
+  </div>
+
+  <div class="row">
+    <!-- Térkép -->
+    <div class="col-md-6 mb-4">
+      <h3>Hol talál minket?</h3>
+      <iframe class="map" src="https://www.google.com/maps?q=Budapest&output=embed" loading="lazy"></iframe>
+    </div>
+
+    <!-- Kapcsolat form -->
+    <div class="col-md-6 mb-4">
+      <h3>Írjon nekünk!</h3>
+      <div class="mb-3">
+        <label class="form-label">Név</label>
+        <input type="text" class="form-control" [(ngModel)]="contactName">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="contactEmail">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Üzenet</label>
+        <textarea class="form-control" rows="3" [(ngModel)]="contactMessage"></textarea>
+      </div>
+      <button class="btn btn-primary" (click)="sendMessage()">Küldés</button>
+    </div>
+  </div>
+
+</div>
