@@ -1,0 +1,26 @@
+<div
+	*ngIf="toastService.message"
+	class="toast-container position-fixed bottom-0 end-0 p-3"
+>
+	<div
+		class="toast show"
+		[ngClass]="toastService.title === 'success' ? 'text-bg-success' : 'text-bg-danger'"
+	>
+		<div
+			class="toast-header border-0"
+			[ngClass]="toastService.title === 'success' ? 'text-bg-success' : 'text-bg-danger'"
+		>
+			<strong class="me-auto">{{ toastService.title | uppercase }}</strong>
+
+			<button
+				type="button"
+				class="btn-close btn-close-white"
+				(click)="toastService.hide()"
+			></button>
+		</div>
+
+		<div class="toast-body">
+			{{ toastService.message }}
+		</div>
+	</div>
+</div>

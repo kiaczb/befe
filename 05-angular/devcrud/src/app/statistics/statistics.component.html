@@ -1,0 +1,30 @@
+<div class="alert alert-info" role="alert">
+	<h4 class="alert-heading">Statistics</h4>
+
+	<p>
+		<b>Number of employees:</b>
+		{{ developerCount$ | async }}
+	</p>
+
+	<p>
+		<b>Average salary:</b>
+		{{ averageSalary$ | async | number:"1.0-0" }} Ft
+	</p>
+
+	<p>
+		<b>Highest salary:</b>
+		{{ highestSalary$ | async | number:"1.0-0" }} Ft
+	</p>
+
+	<p>
+		<b>Most skilled developer:</b>
+		{{ (mostSkilledDeveloper$ | async)?.name }}
+		({{ (mostSkilledDeveloper$ | async)?.skills?.length }})
+	</p>
+
+	<hr>
+  <p class="mb-0">
+		To receive further information and statistics, please contact our corresponding colleague at
+		<a href="mailto:magyar.virag@uni-obuda.hu">magyar.virag&#64;uni-obuda.hu</a>.
+	</p>
+</div>
