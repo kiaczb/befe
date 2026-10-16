@@ -28,7 +28,8 @@ export class ComponentAComponent implements OnInit, OnDestroy {
 
 		// this.sub?.unsubscribe()
 
-		// ^^^^ ha benn van: gyorsan átnavigálva másik komponensre (lassú hálózati kommunikáció)
+		// ^^^^
+		// ha benn van: gyorsan átnavigálva másik komponensre (lassú hálózati kommunikáció)
 		// a folyamatban lévő kérés eldobásra kerül
 		// ha ki van kommentelve: hiába navigálunk át, a kérés lefut a háttérben (fölöslegesen)
 

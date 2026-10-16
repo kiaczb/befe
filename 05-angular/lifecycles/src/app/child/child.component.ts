@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { StringContent } from '../string-content';
 
 @Component({
@@ -7,7 +7,7 @@ import { StringContent } from '../string-content';
   templateUrl: './child.component.html',
   styleUrl: './child.component.sass'
 })
-export class ChildComponent implements OnChanges {
+export class ChildComponent implements OnChanges, OnInit, OnDestroy {
   @Input() content: StringContent = new StringContent()
   @Input() message: string = ""
 
@@ -15,7 +15,15 @@ export class ChildComponent implements OnChanges {
     console.log("Child constructor runs")
   }
 
+	ngOnInit(): void {
+		console.log("Child onInit runs")
+	}
+
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Child OnChanges runs")
+		console.log("Child OnChanges runs")
   }
+
+	ngOnDestroy(): void {
+		console.log("Child onDestory runs")
+	}
 }
