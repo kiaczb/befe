@@ -34,13 +34,22 @@ export class Animals {
     this.selectedAnimal = animal;
   }
 
+  saveAnimal() : void{
+    if(this.selectedAnimal == null ){
+      alert('Nincs kiválasztva állat!');
+      return;
+    }
+    console.log(`Az örökbefogadás sikeres! ${this.selectedAnimal.name} örökbefogadása megtörtént.`);
+    this.selectedAnimal = null;
+  }
+
   startAdoption() : void{
-    if(this.credentials.name === '' || this.credentials.phone === '' || this.selectedAnimal == null ){
+    if(this.credentials.name === '' || this.credentials.phone === ''){
       alert('Kérjük, töltsön ki minden mezőt, és válasszon egy állatot!');
       return;
     }
-    alert(`Köszönjük az érdeklődést! ${this.selectedAnimal.name} örökbefogadásával kapcsolatban a ${this.credentials.phone} számon keresni fogjuk.`);
-    console.log(this.credentials);
+    this.saveAnimal();
+     console.log(this.credentials);
     this.credentials = { name: '', phone: '' };
     this.selectedAnimal = null;
   }

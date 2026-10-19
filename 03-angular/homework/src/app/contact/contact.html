@@ -38,6 +38,6 @@
       <textarea class="form-control" [(ngModel)]="message"></textarea>
     </div>
 
-    <button class="btn btn-success" (click)="submitForm()">Küldés</button>
+    <button class="btn btn-success" (click)="submitForm()" [disabled] = "!isValidEmail">Küldés</button>
   </div>
 </div>
